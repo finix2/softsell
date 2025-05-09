@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shooting Stars Animation */
+@keyframes shooting-star {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+              0 0 0 8px rgba(255,255,255,0.1),
+              0 0 20px rgba(255,255,255,0.1);
+  animation: shooting-star linear infinite;
+}
+
+.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg,#fff,transparent);
+}
+
+/* Dark mode compatibility for shooting stars */
+.dark .star {
+  background: #7dd3fc;
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.1),
+              0 0 0 8px rgba(125, 211, 252, 0.1),
+              0 0 20px rgba(125, 211, 252, 0.1);
+}
+
+.dark .star::before {
+  background: linear-gradient(90deg, #7dd3fc, transparent);
+}
+
+/* Chat Widget Scrollbar Styles */
+.h-64::-webkit-scrollbar {
+  width: 6px;
+}
+
+.h-64::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.h-64::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.h-64::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark .h-64::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark .h-64::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+.dark .h-64::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}

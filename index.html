@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SoftSell - Buy and sell software licenses easily and securely." />
+  <meta name="keywords" content="software licenses, sell software, buy software, SoftSell" />
+  <meta name="author" content="SoftSell Team" />
+  <title>SoftSell - Sell Your Software Licenses</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script>
+    // Prevent flash of light mode
+    if (localStorage.getItem('darkMode') === 'true' || 
+        (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
